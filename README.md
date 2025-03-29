@@ -6,7 +6,7 @@ https://github.com/sergiioo101/Simulacro_Examen_Parcial_1.git
 
 ---
 
-## PARTE I
+# PARTE I
 
 ---
 
@@ -65,6 +65,7 @@ La capa de transporte se ocupa de **segmentar** los datos recibidos de la capa d
 #### Capa de Transporte en el modelo TCP/IP
 
 Esta capa también proporciona **comunicación extremo a extremo**, pero basa sus funciones en dos protocolos principales:
+
 - **TCP (Transmission Control Protocol)**: ofrece fiabilidad, está orientado a conexión y asegura la entrega ordenada de los datos.  
 - **UDP (User Data Protocol)**: es más simple, no garantiza confirmaciones ni orden de entrega, siendo útil en aplicaciones donde la pérdida de algunos paquetes no afecta críticamente al servicio.
 
@@ -134,7 +135,7 @@ En el **modelo TCP/IP**, la comunicación entre dos dispositivos se basa en el p
 
 ---
 
-## PARTE II
+# PARTE II
 
 ---
 
@@ -142,33 +143,40 @@ En el **modelo TCP/IP**, la comunicación entre dos dispositivos se basa en el p
 
 A partir de la **Fórmula de Shannon**:
 
-\[
+$$
 C = B \times \log_2 \bigl(1 + \text{SNR}_{\text{lineal}}\bigr),
-\]
+$$
 
 se tienen los datos:
-- Ancho de banda: \( B = 500 \,\text{MHz} = 500 \times 10^6 \,\text{Hz}\).  
+
+- Ancho de banda: \( B = 500 \,\text{MHz} = 500 \times 10^6 \,\text{Hz} \).  
 - \(\text{SNR} = 20 \,\text{dB}\).
 
 1. **Conversión de SNR de dB a escala lineal**  
-   \[
+
+   $$
    \text{SNR}_{\text{lineal}} = 10^{\frac{20}{10}} = 10^2 = 100.
-   \]
+   $$
 
 2. **Cálculo de la capacidad**  
-   \[
-   C = 500 \times 10^6 \,\text{Hz} \times \log_2(1 + 100).
-   \]  
-   Dado que \(1 + 100 = 101\), tenemos:  
-   \[
+
+   $$
+   C = 500 \times 10^6 \,\text{Hz} \times \log_2 (1 + 100).
+   $$
+   
+   Como \(1 + 100 = 101\):
+
+   $$
    \log_2(101) \approx 6.66.
-   \]  
-   Por lo tanto:  
-   \[
-   C \approx 500 \times 10^6 \times 6.66
+   $$
+
+   Por lo tanto:
+
+   $$
+   C \approx 500 \times 10^6 \times 6.66 
    = 3.33 \times 10^9 \,\text{bps} 
    = 3.33 \,\text{Gbps}.
-   \]
+   $$
 
 **Respuesta**:  
 La tasa de transmisión máxima aproximada para un canal con 500 MHz de ancho de banda y 20 dB de SNR es de **3.33 Gbps**.
@@ -180,14 +188,16 @@ La tasa de transmisión máxima aproximada para un canal con 500 MHz de ancho de
 Dado que en un sistema de comunicación la primera portadora se encuentra a **1.2 GHz** y el ancho de banda en banda base de cada canal es **300 MHz**, se pide:
 
 1. **Frecuencia de la portadora anterior**  
-   \[
-   1.2 \,\text{GHz} - 300 \,\text{MHz} = 0.9 \,\text{GHz} = 900 \,\text{MHz}.
-   \]
+
+   $$
+   1.2 \,\text{GHz} - 300 \,\text{MHz} = 0.9 \,\text{GHz}.
+   $$
 
 2. **Frecuencia de la portadora posterior**  
-   \[
+
+   $$
    1.2 \,\text{GHz} + 300 \,\text{MHz} = 1.5 \,\text{GHz}.
-   \]
+   $$
 
 **Justificación e importancia**  
 Estas frecuencias se separan en al menos 300 MHz para evitar solapamientos entre canales y, por tanto, interferencias. Una correcta ubicación de las portadoras en el espectro permite un **uso más eficiente del ancho de banda**, asegurando que cada canal disponga del espacio necesario para su transmisión sin interferir con los demás.
@@ -214,46 +224,54 @@ Se pide ordenar las modulaciones de mayor a menor robustez ante el ruido (para u
 
 1. **a) Tamaño del mensaje tras agregar cabeceras de capas 4 y 3**  
    - Bloque original (Capa 5):  
-     \[
-       1.5 \text{ Kbytes} = 1.5 \times 1024 = 1536 \text{ bytes}.
-     \]  
-   - Suma de cabeceras (Capas 4 y 3): \( 40 + 40 = 80 \text{ bytes} \).  
-   - Total:  
-     \[
-       1536 + 80 = 1616 \text{ bytes}.
-     \]
+     
+     $$
+     1.5 \,\text{Kbytes} = 1.5 \times 1024 = 1536 \,\text{bytes}.
+     $$
+
+   - Suma de cabeceras (Capas 4 y 3): \( 40 + 40 = 80 \,\text{bytes} \).  
+   - Total:
+     
+     $$
+     1536 + 80 = 1616 \,\text{bytes}.
+     $$
 
 2. **b) Fragmentación en tramas de 400 bytes (Capa 2)**  
-   \[
-     \frac{1616 \text{ bytes}}{400 \text{ bytes/trama}} 
-     \approx 4.04 \;\longrightarrow\; 5 \text{ tramas}.
-   \]
+   
+   $$
+   \frac{1616 \,\text{bytes}}{400 \,\text{bytes/trama}} 
+   \approx 4.04 \;\Longrightarrow\; 5 \,\text{tramas}.
+   $$
 
 3. **c) Sobrecarga de la Capa 1**  
    - Se añaden **3 bytes** de sobrecarga por cada **2 bytes** de datos (1 byte de inicio, 1 de parada y 1 de CRC).  
-   - En una trama de 400 bytes:  
-     \[
-       \frac{400 \text{ bytes}}{2 \text{ bytes/segmento}} = 200 \text{ segmentos}.
-     \]  
-     Cada uno añade 3 bytes:  
-     \[
-       200 \times 3 = 600 \text{ bytes de sobrecarga}.
-     \]  
+   - En una trama de 400 bytes:
+     
+     $$
+     \frac{400 \,\text{bytes}}{2 \,\text{bytes/segmento}} = 200 \,\text{segmentos}.
+     $$
+
+   - Cada uno añade 3 bytes:
+     
+     $$
+     200 \times 3 = 600 \,\text{bytes de sobrecarga}.
+     $$
+
    - Por tanto, cada trama de 400 bytes se convierte en 1000 bytes totales en la capa física (400 + 600).
 
 4. **d) Eficiencia del sistema**  
-   - **Total de datos transmitidos**:  
-     \[
-       5 \text{ tramas} \times 1000 \text{ bytes/trama} = 5000 \text{ bytes}.
-     \]  
+   - **Total de datos transmitidos**:
+     
+     $$
+     5 \,\text{tramas} \times 1000 \,\text{bytes/trama} = 5000 \,\text{bytes}.
+     $$
+
    - **Datos útiles**: 1536 bytes del bloque original (Capa 5).  
-   - **Eficiencia**:  
-     \[
-       \frac{1536}{5000} \times 100 \% \approx 30.72 \%.
-     \]
+   - **Eficiencia**:
+     
+     $$
+     \frac{1536}{5000} \times 100\% \approx 30.72\%.
+     $$
 
 **Conclusión**  
 El bloque final es de 1616 bytes antes de fragmentarse. Se requieren 5 tramas de 400 bytes en Capa 2. Cada trama añade 600 bytes de sobrecarga en Capa 1, llegando a 1000 bytes por trama (datos + sobrecarga). Se transmiten en total 5000 bytes, de los cuales 1536 son útiles, resultando en una eficiencia aproximada del **30.72%**.
-
----
-```
