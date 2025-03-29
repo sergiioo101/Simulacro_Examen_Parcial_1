@@ -1,8 +1,7 @@
 # Simulacro_Examen_Parcial_1
 https://github.com/sergiioo101/Simulacro_Examen_Parcial_1.git
 
-```markdown
-# SIMULACRO EXAMEN PARCIAL 1
+A continuación tienes una versión en Markdown que puede verse correctamente en un README de GitHub. Todas las fórmulas se han convertido en texto o se han encapsulado en bloques de código para evitar problemas de visualización. Si tu repositorio cuenta con alguna extensión que renderice LaTeX, puedes reintroducir la notación típica de LaTeX; de lo contrario, lo más seguro es usar texto y bloques de código tal y como se muestra aquí.
 
 ---
 
@@ -10,7 +9,7 @@ https://github.com/sergiioo101/Simulacro_Examen_Parcial_1.git
 
 ---
 
-### Pregunta 1 A)
+## Pregunta 1 A)
 
 A partir de los apuntes proporcionados, podemos extraer las siguientes diferencias principales entre el modelo **OSI** y el modelo **TCP/IP**:
 
@@ -30,11 +29,11 @@ Estas diferencias reflejan principalmente que el modelo OSI ofrece una **separac
 
 ---
 
-### Pregunta 1 B)
+## Pregunta 1 B)
 
 A partir del texto proporcionado, podemos resumir las **ventajas y limitaciones** de cada modelo de la siguiente manera:
 
-#### Modelo OSI
+### Modelo OSI
 
 - **Ventajas**:  
   - Descripción muy clara y detallada de funciones en cada una de las siete capas.  
@@ -44,7 +43,7 @@ A partir del texto proporcionado, podemos resumir las **ventajas y limitaciones*
   - Su separación tan detallada (por ejemplo, capas de Sesión y Presentación) a veces no coincide con la práctica real de las redes.  
   - Puede resultar más complejo en la implementación.
 
-#### Modelo TCP/IP
+### Modelo TCP/IP
 
 - **Ventajas**:  
   - Agrupa capas y simplifica la implementación (por ejemplo, combina las capas Física y de Enlace, y reúne Sesión, Presentación y Aplicación).  
@@ -56,14 +55,12 @@ A partir del texto proporcionado, podemos resumir las **ventajas y limitaciones*
 
 ---
 
-### Pregunta 2
+## Pregunta 2
 
-#### Capa de Transporte en el modelo OSI
-
+**Capa de Transporte en el modelo OSI**  
 La capa de transporte se ocupa de **segmentar** los datos recibidos de la capa de red y de enviarlos de **extremo a extremo**. En este modelo, puede ofrecer un servicio **libre de errores** (con confirmaciones y entrega ordenada) o **mensajes aislados** (sin garantía de orden ni confirmación). De esta forma, protege a las capas superiores de los detalles y variaciones en las capas inferiores.
 
-#### Capa de Transporte en el modelo TCP/IP
-
+**Capa de Transporte en el modelo TCP/IP**  
 Esta capa también proporciona **comunicación extremo a extremo**, pero basa sus funciones en dos protocolos principales:
 
 - **TCP (Transmission Control Protocol)**: ofrece fiabilidad, está orientado a conexión y asegura la entrega ordenada de los datos.  
@@ -71,7 +68,7 @@ Esta capa también proporciona **comunicación extremo a extremo**, pero basa su
 
 ---
 
-### Pregunta 3
+## Pregunta 3
 
 1. **Orientación a conexión**  
    - **TCP**: Orientado a conexión (establece una sesión antes de enviar datos).  
@@ -91,7 +88,7 @@ Esta capa también proporciona **comunicación extremo a extremo**, pero basa su
 
 ---
 
-### Pregunta 4
+## Pregunta 4
 
 **a) Protocolo tradicional para transferencia de archivos**  
 El protocolo más habitual en la capa de Aplicación para este fin es **FTP (File Transfer Protocol)**, que permite subir, descargar, renombrar y manipular archivos entre un cliente y un servidor.
@@ -102,17 +99,17 @@ El protocolo más habitual en la capa de Aplicación para este fin es **FTP (Fil
 
 ---
 
-### Pregunta 5
+## Pregunta 5
 
 Cuando el usuario escribe una URL en el navegador, primero se revisa la **caché** del sistema (o del propio navegador) para ver si ya se conoce la dirección IP asociada. Si no está en caché, la petición se envía al **servidor DNS local**, que puede hacer consultas recursivas a otros servidores para encontrar la IP.
 
-Si el servidor DNS local no tiene la respuesta, primero consulta a uno de los **servidores raíz**. Estos servidores raíz indican cuál es el servidor encargado de manejar el **dominio de nivel superior** (por ejemplo, `.com`). A continuación, se consulta al servidor TLD correspondiente, que señala el **servidor autoritativo** para el dominio específico (ej. `ejemplo.com`). Este último servidor responde con la dirección IP del host requerido (ej. `www.ejemplo.com`).
+Si el servidor DNS local no tiene la respuesta, primero consulta a uno de los **servidores raíz**. Estos servidores raíz indican cuál es el servidor encargado de manejar el **dominio de nivel superior** (por ejemplo, `.com`). A continuación, se consulta al servidor TLD correspondiente, que señala el **servidor autoritativo** para el dominio específico (por ejemplo, `ejemplo.com`). Este último servidor responde con la dirección IP del host requerido (por ejemplo, `www.ejemplo.com`).
 
 Finalmente, el servidor DNS local guarda esa información en su caché y la remite al cliente, que ahora sabe a qué IP conectarse. Con la dirección IP resuelta, el navegador establece la conexión (por lo general TCP) con el servidor web y empieza la transferencia de datos.
 
 ---
 
-### Pregunta 6
+## Pregunta 6
 
 En el **modelo TCP/IP**, la comunicación entre dos dispositivos se basa en el proceso de **encapsulación** de datos a través de cuatro capas:
 
@@ -129,7 +126,7 @@ En el **modelo TCP/IP**, la comunicación entre dos dispositivos se basa en el p
    Encapsula los datos de Transporte en **paquetes IP**, añadiendo direcciones IP de origen y destino. Su objetivo principal es **encaminar** esos paquetes de un nodo al otro a través de la red, gestionando posibles saltos intermedios (routers). Esta capa no garantiza fiabilidad; se limita a intentar entregar los paquetes a la dirección destino.
 
 4. **Capa de Acceso a Red (Enlace + Física)**  
-   Adapta los paquetes IP para que viajen por el medio físico de la red local (Ethernet, Wi-Fi, etc.). Añade una cabecera y, a menudo, un tráiler, conteniendo direcciones MAC y datos de verificación (CRC). La parte Física finalmente se encarga de la transmisión de los bits (señales) por cables o medios inalámbricos.
+   Adapta los paquetes IP para que viajen por el medio físico de la red local (Ethernet, Wi-Fi, etc.). Añade una cabecera y, a menudo, un tráiler que contiene direcciones MAC y datos de verificación (CRC). La parte Física finalmente se encarga de la transmisión de los bits (señales) por cables o medios inalámbricos.
 
 **Recepción**: En el dispositivo receptor, el proceso se realiza a la inversa. Desde la capa Física, los bits se agrupan en tramas de la capa de Enlace, se extrae el paquete IP para la capa de Internet, y luego el segmento para la capa de Transporte. Finalmente, los datos llegan a la capa de Aplicación, donde la información se interpreta por el software correspondiente.
 
@@ -139,139 +136,123 @@ En el **modelo TCP/IP**, la comunicación entre dos dispositivos se basa en el p
 
 ---
 
-### Pregunta 7 (Fórmula de Shannon)
+## Pregunta 7 (Fórmula de Shannon)
 
-A partir de la **Fórmula de Shannon**:
+La **Fórmula de Shannon** se expresa así:
 
-$$
-C = B \times \log_2 \bigl(1 + \text{SNR}_{\text{lineal}}\bigr),
-$$
+```
+C = B * log2(1 + SNR_lineal)
+```
 
-se tienen los datos:
+Donde:  
+- `C` es la capacidad o tasa máxima de transmisión.  
+- `B` es el ancho de banda.  
+- `SNR_lineal` es la relación señal/ruido en escala lineal.
 
-- Ancho de banda: \( B = 500 \,\text{MHz} = 500 \times 10^6 \,\text{Hz} \).  
-- \(\text{SNR} = 20 \,\text{dB}\).
+Datos del problema:  
+- Ancho de banda: B = 500 MHz = 500 × 10^6 Hz  
+- SNR = 20 dB
 
 1. **Conversión de SNR de dB a escala lineal**  
 
-   $$
-   \text{SNR}_{\text{lineal}} = 10^{\frac{20}{10}} = 10^2 = 100.
-   $$
+   Una SNR de 20 dB se convierte a escala lineal como:
+   ```
+   SNR_lineal = 10^(20/10) = 10^2 = 100
+   ```
 
 2. **Cálculo de la capacidad**  
 
-   $$
-   C = 500 \times 10^6 \,\text{Hz} \times \log_2 (1 + 100).
-   $$
-   
-   Como \(1 + 100 = 101\):
-
-   $$
-   \log_2(101) \approx 6.66.
-   $$
-
-   Por lo tanto:
-
-   $$
-   C \approx 500 \times 10^6 \times 6.66 
-   = 3.33 \times 10^9 \,\text{bps} 
-   = 3.33 \,\text{Gbps}.
-   $$
+   ```
+   C = 500 × 10^6 * log2(1 + 100)
+   ```
+   Dado que 1 + 100 = 101,  
+   ```
+   log2(101) ≈ 6.66
+   ```
+   Por lo tanto,  
+   ```
+   C ≈ 500 × 10^6 × 6.66
+     = 3.33 × 10^9 bps
+     = 3.33 Gbps
+   ```
 
 **Respuesta**:  
 La tasa de transmisión máxima aproximada para un canal con 500 MHz de ancho de banda y 20 dB de SNR es de **3.33 Gbps**.
 
 ---
 
-### Pregunta 8 (Ubicación de portadoras)
+## Pregunta 8 (Ubicación de portadoras)
 
-Dado que en un sistema de comunicación la primera portadora se encuentra a **1.2 GHz** y el ancho de banda en banda base de cada canal es **300 MHz**, se pide:
+Se dispone de una primera portadora a 1.2 GHz y cada canal tiene un ancho de banda en banda base de 300 MHz. Se pide calcular la portadora anterior y posterior:
 
 1. **Frecuencia de la portadora anterior**  
-
-   $$
-   1.2 \,\text{GHz} - 300 \,\text{MHz} = 0.9 \,\text{GHz}.
-   $$
+   ```
+   1.2 GHz - 300 MHz = 0.9 GHz
+   ```
 
 2. **Frecuencia de la portadora posterior**  
-
-   $$
-   1.2 \,\text{GHz} + 300 \,\text{MHz} = 1.5 \,\text{GHz}.
-   $$
+   ```
+   1.2 GHz + 300 MHz = 1.5 GHz
+   ```
 
 **Justificación e importancia**  
-Estas frecuencias se separan en al menos 300 MHz para evitar solapamientos entre canales y, por tanto, interferencias. Una correcta ubicación de las portadoras en el espectro permite un **uso más eficiente del ancho de banda**, asegurando que cada canal disponga del espacio necesario para su transmisión sin interferir con los demás.
+Estas frecuencias se separan en al menos 300 MHz para evitar solapamientos entre canales y, por tanto, interferencias. Una correcta ubicación de las portadoras en el espectro permite un uso más eficiente del ancho de banda, asegurando que cada canal disponga del espacio necesario para su transmisión sin interferir con los demás.
 
 ---
 
-### Pregunta 9 (Orden de modulaciones según robustez)
+## Pregunta 9 (Orden de modulaciones según robustez)
 
-Se pide ordenar las modulaciones de mayor a menor robustez ante el ruido (para una misma SNR). De acuerdo con la cantidad de símbolos (y la sensibilidad al ruido creciente):
+Ordenar las modulaciones de mayor a menor robustez ante el ruido (para una misma SNR). Cuanto más símbolos posee la constelación, más sensible es al ruido:
 
-1. **BPSK (2-QAM)**  
-2. **QPSK (4 símbolos)**  
-3. **16-QAM**  
-4. **64-QAM**  
-5. **256-QAM**
+1. BPSK (2-QAM)  
+2. QPSK (4 símbolos)  
+3. 16-QAM  
+4. 64-QAM  
+5. 256-QAM
 
 **Justificación**  
-- BPSK, con solo 2 símbolos, presenta la mayor distancia entre constelaciones y mayor tolerancia al ruido.  
-- A medida que crece el número de símbolos (QPSK, 16-QAM, 64-QAM, 256-QAM), aumenta la eficiencia espectral pero disminuye la **robustez** frente al ruido, ya que los puntos del diagrama de constelación quedan más próximos.
+- BPSK, con solo 2 símbolos, presenta la mayor distancia entre constelaciones y, por tanto, mayor tolerancia al ruido.  
+- A medida que crece el número de símbolos (QPSK, 16-QAM, 64-QAM, 256-QAM), aumenta la eficiencia espectral pero disminuye la robustez frente al ruido debido a la menor distancia entre puntos de constelación.
 
 ---
 
-### Pregunta 10 (Encapsulamiento y eficiencia)
+## Pregunta 10 (Encapsulamiento y eficiencia)
 
-1. **a) Tamaño del mensaje tras agregar cabeceras de capas 4 y 3**  
+1. **(a) Tamaño del mensaje tras agregar cabeceras de capas 4 y 3**  
    - Bloque original (Capa 5):  
-     
-     $$
-     1.5 \,\text{Kbytes} = 1.5 \times 1024 = 1536 \,\text{bytes}.
-     $$
+     1.5 Kbytes = 1.5 × 1024 = 1536 bytes  
+   - Suma de cabeceras (Capas 4 y 3): 40 + 40 = 80 bytes  
+   - Total: 1536 + 80 = 1616 bytes
 
-   - Suma de cabeceras (Capas 4 y 3): \( 40 + 40 = 80 \,\text{bytes} \).  
-   - Total:
-     
-     $$
-     1536 + 80 = 1616 \,\text{bytes}.
-     $$
+2. **(b) Fragmentación en tramas de 400 bytes (Capa 2)**  
+   ```
+   1616 bytes / 400 bytes/trama ≈ 4.04 → 5 tramas
+   ```
 
-2. **b) Fragmentación en tramas de 400 bytes (Capa 2)**  
-   
-   $$
-   \frac{1616 \,\text{bytes}}{400 \,\text{bytes/trama}} 
-   \approx 4.04 \;\Longrightarrow\; 5 \,\text{tramas}.
-   $$
+3. **(c) Sobrecarga de la Capa 1**  
+   - Se añaden 3 bytes de sobrecarga por cada 2 bytes de datos (1 byte de inicio, 1 de parada y 1 de CRC).  
+   - En una trama de 400 bytes:  
+     ```
+     400 bytes / 2 bytes/segmento = 200 segmentos
+     200 segmentos × 3 bytes = 600 bytes de sobrecarga
+     ```
+   - Cada trama pasa de 400 bytes a 1000 bytes totales en la capa física (400 + 600).
 
-3. **c) Sobrecarga de la Capa 1**  
-   - Se añaden **3 bytes** de sobrecarga por cada **2 bytes** de datos (1 byte de inicio, 1 de parada y 1 de CRC).  
-   - En una trama de 400 bytes:
-     
-     $$
-     \frac{400 \,\text{bytes}}{2 \,\text{bytes/segmento}} = 200 \,\text{segmentos}.
-     $$
-
-   - Cada uno añade 3 bytes:
-     
-     $$
-     200 \times 3 = 600 \,\text{bytes de sobrecarga}.
-     $$
-
-   - Por tanto, cada trama de 400 bytes se convierte en 1000 bytes totales en la capa física (400 + 600).
-
-4. **d) Eficiencia del sistema**  
-   - **Total de datos transmitidos**:
-     
-     $$
-     5 \,\text{tramas} \times 1000 \,\text{bytes/trama} = 5000 \,\text{bytes}.
-     $$
-
-   - **Datos útiles**: 1536 bytes del bloque original (Capa 5).  
-   - **Eficiencia**:
-     
-     $$
-     \frac{1536}{5000} \times 100\% \approx 30.72\%.
-     $$
+4. **(d) Eficiencia del sistema**  
+   - Total de datos transmitidos:  
+     ```
+     5 tramas × 1000 bytes/trama = 5000 bytes
+     ```
+   - Datos útiles: 1536 bytes del bloque original (Capa 5).  
+   - Eficiencia:
+     ```
+     (1536 / 5000) × 100% ≈ 30.72%
+     ```
 
 **Conclusión**  
-El bloque final es de 1616 bytes antes de fragmentarse. Se requieren 5 tramas de 400 bytes en Capa 2. Cada trama añade 600 bytes de sobrecarga en Capa 1, llegando a 1000 bytes por trama (datos + sobrecarga). Se transmiten en total 5000 bytes, de los cuales 1536 son útiles, resultando en una eficiencia aproximada del **30.72%**.
+- El bloque final (Capa 5) es de 1616 bytes.  
+- Se requieren 5 tramas de 400 bytes cada una en Capa 2.  
+- Cada trama añade 600 bytes de sobrecarga en Capa 1, resultando 1000 bytes por trama.  
+- En total se transmiten 5000 bytes, de los cuales 1536 son datos útiles.  
+- La eficiencia aproximada es **30.72%**.
+
